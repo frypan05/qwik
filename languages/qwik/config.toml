@@ -1,0 +1,16 @@
+name = "Qwik"
+
+grammar = "tsx"
+
+path_suffixes = [
+"tsx",
+"jsx"
+]
+
+line_comments = [
+"// "
+]
+
+tab_size = 2
+
+hard_tabs = false

@@ -1,0 +1,46 @@
+{
+  "Qwik Component": {
+    "prefix": "qcomp",
+    "body": [
+      "export default component$(() => {",
+      "  return (",
+      "    <div>$0</div>",
+      "  )",
+      "})"
+    ]
+  },
+
+  "Signal": {
+    "prefix": "qsignal",
+    "body": [
+      "const ${1:state}=useSignal(${2:null})"
+    ]
+  },
+
+  "Store": {
+    "prefix": "qstore",
+    "body": [
+      "const ${1:store}=useStore({",
+      "  $0",
+      "})"
+    ]
+  },
+
+  "Loader": {
+    "prefix": "qloader",
+    "body": [
+      "export const use${1:Data}=routeLoader$(async()=>{",
+      "  $0",
+      "})"
+    ]
+  },
+
+  "Visible Task": {
+    "prefix": "qvisible",
+    "body": [
+      "useVisibleTask$(()=>{",
+      "  $0",
+      "})"
+    ]
+  }
+}
