@@ -7,7 +7,7 @@ version = "0.0.1"
 schema_version = 1
 
 authors = [
-"Daksh Sharma"
+  "Daksh Sharma"
 ]
 
 description = "Qwik support for Zed"
@@ -15,5 +15,8 @@ description = "Qwik support for Zed"
 repository = "https://github.com/frypan05/qwik"
 
 snippets = [
-"./snippets/tsx.json"
+  "./snippets/tsx.json"
 ]
+
+[language.qwik]
+path = "languages/qwik"

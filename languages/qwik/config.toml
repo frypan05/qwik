@@ -3,14 +3,17 @@ name = "Qwik"
 grammar = "tsx"
 
 path_suffixes = [
-"tsx",
-"jsx"
+  "tsx",
+  "jsx"
 ]
 
-line_comments = [
-"// "
+line_comments = ["// "]
+
+autoclose_before = ";:.,=}])>` \n\t"
+
+brackets = [
+  ["{", "}"],
+  ["[", "]"],
+  ["(", ")"],
+  ["<", ">"]
 ]
-
-tab_size = 2
-
-hard_tabs = false
