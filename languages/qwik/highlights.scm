@@ -1,24 +1,8 @@
-[
-"component$"
-"useSignal"
-"useStore"
-"useTask$"
-"useVisibleTask$"
-"routeLoader$"
-"routeAction$"
-"server$"
-] @function
+; Qwik lifecycle hooks — highlight as functions
+((call_expression
+  function: (identifier) @function
+  (#match? @function "^(component|useTask|useVisibleTask|useSignal|useStore|useResource|useContext|useContextProvider|createContextId|useStyles|useStylesScoped|server|routeLoader|routeAction)\\$")))
 
-[
-"Link"
-"Form"
-] @type
-
-[
-"useLocation"
-"useNavigate"
-] @variable
-
-[
-"$"
-] @operator
+; $ suffix marker — highlight as operator
+((identifier) @operator
+  (#match? @operator "\\$$"))

@@ -1,0 +1,36 @@
+{
+  "Qwik server$": {
+    "prefix": "q-server",
+    "body": [
+      "import { server$ } from '@builder.io/qwik-city';",
+      "",
+      "export const ${1:myServerFn} = server$(async function () {",
+      "  ${2:// runs only on the server}",
+      "});"
+    ],
+    "description": "server$() — server-only function callable from client"
+  },
+  "Qwik routeLoader$ (ts)": {
+    "prefix": "qc-route-loader",
+    "body": [
+      "import { routeLoader$ } from '@builder.io/qwik-city';",
+      "",
+      "export const ${1:useData} = routeLoader$(async (requestEvent) => {",
+      "  return ${2:data};",
+      "});"
+    ],
+    "description": "routeLoader$() in a route .ts file"
+  },
+  "Qwik City middleware": {
+    "prefix": "qc-middleware",
+    "body": [
+      "import type { RequestHandler } from '@builder.io/qwik-city';",
+      "",
+      "export const onRequest: RequestHandler = async ({ next, redirect, cookie }) => {",
+      "  ${1:// middleware logic}",
+      "  await next();",
+      "};"
+    ],
+    "description": "onRequest middleware handler"
+  }
+}

@@ -1,22 +1,12 @@
 id = "qwik"
-
 name = "Qwik"
-
 version = "0.0.1"
-
 schema_version = 1
-
-authors = [
-  "Daksh Sharma"
-]
-
-description = "Qwik support for Zed"
-
+authors = ["Daksh Sharma"]
+description = "Qwik support for Zed: snippets and syntax highlighting for Qwik and Qwik City"
 repository = "https://github.com/frypan05/qwik"
 
 snippets = [
-  "./snippets/tsx.json"
+  "./snippets/tsx.json",
+  "./snippets/typescript.json"
 ]
-
-[language.qwik]
-path = "languages/qwik"
