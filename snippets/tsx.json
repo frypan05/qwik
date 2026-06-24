@@ -1,167 +1,174 @@
 {
   "Qwik Component": {
-    "prefix": "q-component",
+    "prefix": "qwik-component",
     "description": "Basic Qwik component using component$()",
     "body": [
-      "import { component$ } from '@builder.io/qwik';",
+      "import { component\\$ } from '@builder.io/qwik';",
       "",
-      "export const ${1:MyComponent} = component$(() => {",
-      "  return <${2:div}>${3:Hello Qwik!}</$2>;",
+      "export const ${1:MyComponent} = component\\$(() => {",
+      "  return (",
+      "    <div>",
+      "      ${2:content}",
+      "    </div>",
+      "  );",
       "});"
     ]
   },
   "Qwik Component with Props": {
-    "prefix": "q-component-props",
+    "prefix": "qwik-component-props",
+    "description": "Qwik component with typed props",
     "body": [
-      "import { component$ } from '@builder.io/qwik';",
+      "import { component\\$ } from '@builder.io/qwik';",
       "",
       "interface ${1:MyComponent}Props {",
       "  ${2:prop}: ${3:string};",
       "}",
       "",
-      "export default component$<${1:MyComponent}Props>(({ ${2:prop} }) => {",
+      "export default component\\$<$1Props>(({ $2 }) => {",
       "  return (",
-      "    <div>{${2:prop}}</div>",
+      "    <div>",
+      "      {$2}",
+      "    </div>",
       "  );",
       "});"
-    ],
-    "description": "Qwik component with typed props"
+    ]
   },
   "Qwik useSignal": {
-    "prefix": "q-signal",
+    "prefix": "qwik-signal",
+    "description": "useSignal() — reactive signal",
     "body": [
       "const ${1:count} = useSignal(${2:0});"
-    ],
-    "description": "useSignal() — reactive signal"
+    ]
   },
   "Qwik useStore": {
-    "prefix": "q-store",
+    "prefix": "qwik-store",
+    "description": "useStore() — reactive store object",
     "body": [
       "const ${1:store} = useStore({",
       "  ${2:key}: ${3:value},",
       "});"
-    ],
-    "description": "useStore() — reactive store object"
+    ]
   },
   "Qwik useTask": {
-    "prefix": "q-useTask",
+    "prefix": "qwik-useTask",
+    "description": "useTask$() — runs on server or browser, re-runs on tracked changes",
     "body": [
-      "useTask$(({ track, cleanup }) => {",
+      "useTask\\$(({ track, cleanup }) => {",
       "  track(() => ${1:signal.value});",
       "  ${2:// task logic}",
       "  cleanup(() => {",
       "    ${3:// cleanup}",
       "  });",
       "});"
-    ],
-    "description": "useTask$() — runs on server or browser, re-runs on tracked changes"
+    ]
   },
   "Qwik useVisibleTask": {
-    "prefix": "q-useVisibleTask",
+    "prefix": "qwik-useVisibleTask",
+    "description": "useVisibleTask$() — browser-only, runs after render",
     "body": [
-      "useVisibleTask$(({ cleanup }) => {",
+      "useVisibleTask\\$(({ cleanup }) => {",
       "  ${1:// browser-only code}",
       "  cleanup(() => {",
       "    ${2:// cleanup}",
       "  });",
       "});"
-    ],
-    "description": "useVisibleTask$() — browser-only, runs after render"
+    ]
   },
   "Qwik useResource": {
-    "prefix": "q-resource",
+    "prefix": "qwik-resource",
+    "description": "useResource$() — async data fetching",
     "body": [
-      "const ${1:data} = useResource$<${2:Type}>(async ({ track, cleanup }) => {",
+      "const ${1:data} = useResource\\$<${2:Type}>(async ({ track, cleanup }) => {",
       "  track(() => ${3:signal.value});",
       "  const controller = new AbortController();",
       "  cleanup(() => controller.abort());",
       "  return ${4:fetchData}();",
       "});"
-    ],
-    "description": "useResource$() — async data fetching"
+    ]
   },
-  "Qwik onClick handler": {
-    "prefix": "q-onClick",
+  "Qwik onClick": {
+    "prefix": "qwik-onClick",
+    "description": "onClick$ event handler",
     "body": [
-      "onClick$={() => {",
+      "onClick\\$={() => {",
       "  ${1:// handler}",
       "}}"
-    ],
-    "description": "onClick$ event handler"
+    ]
   },
-  "Qwik onInput handler": {
-    "prefix": "q-onInput",
+  "Qwik onInput": {
+    "prefix": "qwik-onInput",
+    "description": "onInput$ event handler",
     "body": [
-      "onInput$={(e) => {",
+      "onInput\\$={(e) => {",
       "  ${1:store.value} = (e.target as HTMLInputElement).value;",
       "}}"
-    ],
-    "description": "onInput$ event handler"
+    ]
   },
   "Qwik preventDefault": {
-    "prefix": "q-preventdefault",
+    "prefix": "qwik-preventdefault",
+    "description": "Prevent default click — no JS needed",
     "body": [
       "preventdefault:click"
-    ],
-    "description": "Prevent default click — no JS needed"
+    ]
   },
   "Qwik createContextId": {
-    "prefix": "q-createContext",
+    "prefix": "qwik-createContext",
+    "description": "createContextId() — define a context",
     "body": [
       "export const ${1:MyContext} = createContextId<${2:Type}>('${3:my-context}');"
-    ],
-    "description": "createContextId() — define a context"
+    ]
   },
   "Qwik useContextProvider": {
-    "prefix": "q-useContextProvider",
+    "prefix": "qwik-useContextProvider",
+    "description": "useContextProvider() — provide context to children",
     "body": [
       "useContextProvider(${1:MyContext}, ${2:value});"
-    ],
-    "description": "useContextProvider() — provide context to children"
+    ]
   },
   "Qwik useContext": {
-    "prefix": "q-useContext",
+    "prefix": "qwik-useContext",
+    "description": "useContext() — consume context",
     "body": [
       "const ${1:value} = useContext(${2:MyContext});"
-    ],
-    "description": "useContext() — consume context"
+    ]
   },
   "Qwik Slot": {
-    "prefix": "q-slot",
+    "prefix": "qwik-slot",
+    "description": "Default Slot for content projection",
     "body": [
       "<Slot />"
-    ],
-    "description": "Default Slot for content projection"
+    ]
   },
   "Qwik Named Slot": {
-    "prefix": "q-slot-named",
+    "prefix": "qwik-slot-named",
+    "description": "Named Slot for content projection",
     "body": [
       "<Slot name=\"${1:slotName}\" />"
-    ],
-    "description": "Named Slot for content projection"
+    ]
   },
-  "Qwik useStyles$": {
-    "prefix": "q-useStyles",
+  "Qwik useStyles": {
+    "prefix": "qwik-useStyles",
+    "description": "useStyles$() — load component styles",
     "body": [
       "import styles from './${1:component}.css?inline';",
-      "useStyles$(styles);"
-    ],
-    "description": "useStyles$() — load component styles"
+      "useStyles\\$(styles);"
+    ]
   },
-  "Qwik useStylesScoped$": {
-    "prefix": "q-useStylesScoped",
+  "Qwik useStylesScoped": {
+    "prefix": "qwik-useStylesScoped",
+    "description": "useStylesScoped$() — scoped component styles",
     "body": [
       "import styles from './${1:component}.css?inline';",
-      "useStylesScoped$(styles);"
-    ],
-    "description": "useStylesScoped$() — scoped component styles"
+      "useStylesScoped\\$(styles);"
+    ]
   },
   "Qwik City Layout": {
-    "prefix": "qc-layout",
+    "prefix": "qwik-layout",
+    "description": "Qwik City layout component",
     "body": [
-      "import { component$, Slot } from '@builder.io/qwik';",
+      "import { component\\$, Slot } from '@builder.io/qwik';",
       "",
-      "export default component$(() => {",
+      "export default component\\$(() => {",
       "  return (",
       "    <>",
       "      <header>${1:Header}</header>",
@@ -172,16 +179,16 @@
       "    </>",
       "  );",
       "});"
-    ],
-    "description": "Qwik City layout component"
+    ]
   },
   "Qwik City Page": {
-    "prefix": "qc-page",
+    "prefix": "qwik-page",
+    "description": "Qwik City page with DocumentHead",
     "body": [
-      "import { component$ } from '@builder.io/qwik';",
+      "import { component\\$ } from '@builder.io/qwik';",
       "import type { DocumentHead } from '@builder.io/qwik-city';",
       "",
-      "export default component$(() => {",
+      "export default component\\$(() => {",
       "  return (",
       "    <div>",
       "      <h1>${1:Page Title}</h1>",
@@ -195,55 +202,55 @@
       "    { name: 'description', content: '${3:Page description}' },",
       "  ],",
       "};"
-    ],
-    "description": "Qwik City page with DocumentHead"
+    ]
   },
-  "Qwik City routeLoader$": {
-    "prefix": "qc-loader",
+  "Qwik City routeLoader": {
+    "prefix": "qwik-loader",
+    "description": "routeLoader$() — server-side data loader",
     "body": [
-      "import { routeLoader$ } from '@builder.io/qwik-city';",
+      "import { routeLoader\\$ } from '@builder.io/qwik-city';",
       "",
-      "export const ${1:useData} = routeLoader$(async ({ params }) => {",
+      "export const ${1:useData} = routeLoader\\$(async ({ params }) => {",
       "  return {",
       "    ${2:key}: ${3:value},",
       "  };",
       "});"
-    ],
-    "description": "routeLoader$() — server-side data loader"
+    ]
   },
-  "Qwik City routeAction$": {
-    "prefix": "qc-action",
+  "Qwik City routeAction": {
+    "prefix": "qwik-action",
+    "description": "routeAction$() — form action with Zod validation",
     "body": [
-      "import { routeAction$, zod$, z } from '@builder.io/qwik-city';",
+      "import { routeAction\\$, zod\\$, z } from '@builder.io/qwik-city';",
       "",
-      "export const ${1:useAction} = routeAction$(",
+      "export const ${1:useAction} = routeAction\\$(",
       "  async (data, { redirect }) => {",
       "    ${2:// handle action}",
       "    throw redirect(302, '${3:/}');",
       "  },",
-      "  zod$({",
+      "  zod\\$({",
       "    ${4:field}: z.string(),",
       "  })",
       ");"
-    ],
-    "description": "routeAction$() — form action with Zod validation"
+    ]
   },
   "Qwik City useLocation": {
-    "prefix": "qc-useLocation",
+    "prefix": "qwik-useLocation",
+    "description": "useLocation() — access URL, params, and query",
     "body": [
       "const loc = useLocation();"
-    ],
-    "description": "useLocation() — access URL, params, and query"
+    ]
   },
   "Qwik City Link": {
-    "prefix": "qc-link",
+    "prefix": "qwik-link",
+    "description": "Qwik City Link component",
     "body": [
       "<Link href=\"${1:/path}\">${2:label}</Link>"
-    ],
-    "description": "Qwik City Link component"
+    ]
   },
   "Qwik City Static Head": {
-    "prefix": "qc-static-head",
+    "prefix": "qwik-static-head",
+    "description": "Static DocumentHead export",
     "body": [
       "export const head: DocumentHead = {",
       "  title: '${1:Page Title}',",
@@ -251,11 +258,11 @@
       "    { name: 'description', content: '${2:Description}' },",
       "  ],",
       "};"
-    ],
-    "description": "Static DocumentHead export"
+    ]
   },
   "Qwik City Dynamic Head": {
-    "prefix": "qc-dynamic-head",
+    "prefix": "qwik-dynamic-head",
+    "description": "Dynamic DocumentHead using routeLoader data",
     "body": [
       "export const head: DocumentHead = ({ resolveValue }) => {",
       "  const ${1:data} = resolveValue(${2:useData});",
@@ -266,22 +273,22 @@
       "    ],",
       "  };",
       "};"
-    ],
-    "description": "Dynamic DocumentHead using routeLoader data"
+    ]
   },
   "Qwik City onGet": {
-    "prefix": "qc-onGet",
+    "prefix": "qwik-onGet",
+    "description": "onGet API route handler",
     "body": [
       "import type { RequestHandler } from '@builder.io/qwik-city';",
       "",
       "export const onGet: RequestHandler = async ({ json }) => {",
       "  json(200, { ${1:key}: '${2:value}' });",
       "};"
-    ],
-    "description": "onGet API route handler"
+    ]
   },
   "Qwik City onPost": {
-    "prefix": "qc-onPost",
+    "prefix": "qwik-onPost",
+    "description": "onPost API route handler",
     "body": [
       "import type { RequestHandler } from '@builder.io/qwik-city';",
       "",
@@ -289,7 +296,6 @@
       "  const body = await request.json();",
       "  json(200, { ${1:key}: '${2:value}' });",
       "};"
-    ],
-    "description": "onPost API route handler"
+    ]
   }
 }
