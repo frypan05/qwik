@@ -3,10 +3,13 @@ name = "Qwik"
 version = "0.0.1"
 schema_version = 1
 authors = ["Daksh Sharma"]
-description = "Qwik support for Zed: snippets and syntax highlighting for Qwik and Qwik City"
+description = "Qwik support for Zed: snippets, syntax highlighting, and Qwik City <Link href> route completion"
 repository = "https://github.com/frypan05/qwik"
-
 snippets = [
   "./snippets/tsx.json",
   "./snippets/typescript.json"
 ]
+
+[language_servers.qwik-route-ls]
+name = "Qwik Route Completions"
+languages = ["TSX", "JSX"]
